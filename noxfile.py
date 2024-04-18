@@ -191,7 +191,7 @@ def docs_build(session: Session) -> None:
     """
     args = session.posargs or ["docs", "docs/_build"]
     session.install("-e", ".")
-    session.install("sphinx", "sphinx-autobuild", "sphinx-rtd-theme")
+    session.install("sphinx<7", "sphinx-autobuild", "sphinx-rtd-theme")
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():
@@ -212,7 +212,7 @@ def docs(session: Session) -> None:
     """
     args = session.posargs or ["--open-browser", "docs", "docs/_build"]
     session.install("-e", ".")
-    session.install("sphinx", "sphinx-autobuild", "sphinx-rtd-theme")
+    session.install("sphinx<7", "sphinx-autobuild", "sphinx-rtd-theme")
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():

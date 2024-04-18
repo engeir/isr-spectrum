@@ -32,7 +32,7 @@ cycler==0.12.1
     # via matplotlib
 distlib==0.3.8
     # via virtualenv
-docutils==0.20.1
+docutils==0.19
     # via sphinx
     # via sphinx-rtd-theme
 exceptiongroup==1.2.0
@@ -45,7 +45,7 @@ future==1.0.0
     # via uncertainties
 identify==2.5.35
     # via pre-commit
-idna==3.6
+idna==3.7
     # via requests
 imagesize==1.4.1
     # via sphinx
@@ -125,13 +125,13 @@ six==1.16.0
     # via python-dateutil
 snowballstemmer==2.2.0
     # via sphinx
-sphinx==7.1.2
+sphinx==6.2.1
     # via sphinx-autobuild
     # via sphinx-autodoc-typehints
     # via sphinx-rtd-theme
     # via sphinxcontrib-jquery
 sphinx-autobuild==2021.3.14
-sphinx-autodoc-typehints==2.0.0
+sphinx-autodoc-typehints==1.23.0
 sphinx-rtd-theme==2.0.0
 sphinxcontrib-applehelp==1.0.4
     # via sphinx
