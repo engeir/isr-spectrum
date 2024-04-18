@@ -130,6 +130,11 @@ jobs:
           source "$HOME/.rye/env"
           rye --version
 
+      - name: Install Uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv --version
+
       - name: Install Nox
         run: |
           pip install nox
