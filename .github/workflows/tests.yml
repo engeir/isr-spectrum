@@ -47,7 +47,7 @@ jobs:
 
       - name: Upgrade pip
         run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
+          pip install pip
           pip --version
 
       - name: Install Rye
@@ -56,9 +56,14 @@ jobs:
           source "$HOME/.rye/env"
           rye --version
 
+      - name: Install Uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv --version
+
       - name: Install Nox
         run: |
-          pipx install --pip-args=--constraint=.github/workflows/constraints.txt nox
+          pipx install nox
           nox --version
 
       - name: Compute pre-commit cache key
@@ -116,7 +121,7 @@ jobs:
 
       - name: Upgrade pip
         run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
+          pip install pip
           pip --version
 
       - name: Install Rye
@@ -125,9 +130,14 @@ jobs:
           source "$HOME/.rye/env"
           rye --version
 
+      - name: Install Uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv --version
+
       - name: Install Nox
         run: |
-          pip install --constraint=.github/workflows/constraints.txt nox
+          pip install nox
           nox --version
 
       - name: Run codecov session
