@@ -11,6 +11,7 @@ from nox import Session, session
 package = "inscar"
 owner, repository = "engeir", "inscar"
 python_versions = ["3.8", "3.9", "3.10", "3.11", "3.12"]
+nox.options.default_venv_backend = "uv"
 nox.options.sessions = (
     "pre-commit",
     "mypy",
@@ -84,7 +85,7 @@ def precommit(session: Session) -> None:
         The Session object.
     """
     args = session.posargs or ["run", "--all-files", "--show-diff-on-failure"]
-    session.install(".")
+    session.install("-e", ".")
     session.install(
         "ruff",
         "pydocstringformatter",
@@ -109,7 +110,7 @@ def mypy(session: Session) -> None:
         The Session object.
     """
     args = session.posargs or ["src", "tests"]
-    session.install(".")
+    session.install("-e", ".")
     session.install("mypy", "pytest")
     session.install("types-attrs")
     session.run("mypy", *args)
@@ -126,7 +127,7 @@ def tests(session: Session) -> None:
     session : Session
         The Session object.
     """
-    session.install(".")
+    session.install("-e", ".")
     session.install("coverage[toml]", "pytest", "pygments")
     try:
         session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
@@ -159,7 +160,7 @@ def typeguard(session: Session) -> None:
     session : Session
         The Session object.
     """
-    session.install(".")
+    session.install("-e", ".")
     session.install("pytest", "typeguard", "pygments")
     session.run("pytest", f"--typeguard-packages={package}", *session.posargs)
 
@@ -174,7 +175,7 @@ def xdoctest(session: Session) -> None:
         The Session object.
     """
     args = session.posargs or ["all"]
-    session.install(".")
+    session.install("-e", ".")
     session.install("xdoctest[colors]")
     session.run("python", "-m", "xdoctest", package, *args)
 
@@ -189,7 +190,7 @@ def docs_build(session: Session) -> None:
         The Session object.
     """
     args = session.posargs or ["docs", "docs/_build"]
-    session.install(".")
+    session.install("-e", ".")
     session.install("sphinx", "sphinx-autobuild", "sphinx-rtd-theme")
 
     build_dir = Path("docs", "_build")
@@ -210,7 +211,7 @@ def docs(session: Session) -> None:
         The Session object.
     """
     args = session.posargs or ["--open-browser", "docs", "docs/_build"]
-    session.install(".")
+    session.install("-e", ".")
     session.install("sphinx", "sphinx-autobuild", "sphinx-rtd-theme")
 
     build_dir = Path("docs", "_build")

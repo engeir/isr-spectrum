@@ -38,7 +38,7 @@ rye = { dev-dependencies = [
     "pydocstringformatter>=0.7.3",
     "pytest>=8.0.2",
     "pytest-cov>=4.1.0",
-    "ruff>=0.2.2",
+    "ruff>=0.3.7",
     "sphinx-autodoc-typehints>=2.0.0",
     "tqdm>=4.66.2",
     "types-attrs>=19.1.0",
@@ -79,7 +79,7 @@ exclude = [
 # Same as Black.
 line-length = 88
 
-# Assume Python 3.11
+# Assume Python 3.8
 target-version = "py38"
 
 [tool.ruff.lint]
