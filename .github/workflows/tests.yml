@@ -47,7 +47,7 @@ jobs:
 
       - name: Upgrade pip
         run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
+          pip install pip
           pip --version
 
       - name: Install Rye
@@ -58,7 +58,7 @@ jobs:
 
       - name: Install Nox
         run: |
-          pipx install --pip-args=--constraint=.github/workflows/constraints.txt nox
+          pipx install nox
           nox --version
 
       - name: Compute pre-commit cache key
@@ -116,7 +116,7 @@ jobs:
 
       - name: Upgrade pip
         run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
+          pip install pip
           pip --version
 
       - name: Install Rye
@@ -127,7 +127,7 @@ jobs:
 
       - name: Install Nox
         run: |
-          pip install --constraint=.github/workflows/constraints.txt nox
+          pip install nox
           nox --version
 
       - name: Run codecov session
