@@ -13,13 +13,8 @@ class SpectrumCalculation:
 
     def __init__(self):
         """Create the basic spectrum calculation object with empty attributes."""
-        self.ion: config.Particle
-        self.electron: config.Particle
-        self.ion_integration_function: integrand_functions.Integrand
-        self.electron_integration_function: integrand_functions.Integrand
-        self._calulate_f = self._calulate_f_function
+        self._calculate_f = self._calculate_f_function
         self._susceptibility = self._susceptibility_function
-        self.params: config.Parameters
 
     def set_params(self, params: config.Parameters) -> None:
         """Set the plasma parameters.
@@ -105,8 +100,8 @@ class SpectrumCalculation:
                 + "Use set_electron_integration_function()."
             )
 
-        fi = self._calulate_f(self.ion, self.ion_integration_function)
-        fe = self._calulate_f(self.electron, self.electron_integration_function)
+        fi = self._calculate_f(self.ion, self.ion_integration_function)
+        fe = self._calculate_f(self.electron, self.electron_integration_function)
 
         xp_i = self._susceptibility(self.ion, self.ion_integration_function)
         xp_e = self._susceptibility(self.electron, self.electron_integration_function)
@@ -141,9 +136,9 @@ class SpectrumCalculation:
         --------
         inscar.numba_integration.integrate
         """
-        self._calulate_f = f_func
+        self._calculate_f = f_func
 
-    def _calulate_f_function(
+    def _calculate_f_function(
         self, particle: config.Particle, int_func: integrand_functions.Integrand
     ) -> np.ndarray:
         int_func.initialize(self.params, particle)

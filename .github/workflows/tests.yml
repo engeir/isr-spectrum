@@ -141,9 +141,6 @@ jobs:
           nox --version
 
       - name: Run codecov session
-        run: |
-          source "$HOME/.rye/env"
-          rye --version
-          nox --sessions tests-3.12 coverage
+        run: nox --sessions tests-3.12 coverage
         env:
           CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
