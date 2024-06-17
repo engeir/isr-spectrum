@@ -1,6 +1,6 @@
 [project]
 name = "inscar"
-version = "3.2.1"
+version = "3.3.0"
 description = "Calculate an incoherent scatter spectrum with arbitrary isotropic electron velocity distributions and radar pointing at oblique angles to the magnetic field"
 authors = [{ name = "Eirik Enger", email = "engeir@pm.me" }]
 readme = "README.rst"
@@ -51,7 +51,7 @@ rye = { dev-dependencies = [
 ] }
 
 [tool.mypy]
-files = ["src"]
+files = ["src", "tests", "assets"]
 ignore_missing_imports = true
 allow_redefinition = false
 check_untyped_defs = true

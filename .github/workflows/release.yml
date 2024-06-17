@@ -22,7 +22,7 @@ jobs:
 
       - name: Upgrade pip
         run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
+          pip install pip
           pip --version
 
       - name: Install Rye
