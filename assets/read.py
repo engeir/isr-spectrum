@@ -70,7 +70,7 @@ def interpolate_data(particle: examples.RealDataParticle) -> np.ndarray:
             norm = 18
         sum_over_pitch = (
             np.einsum("ijk->ik", data) / norm
-        )  # removes j-dimansion through dot-product
+        )  # removes j-dimension through dot-product
         idx = int(np.argwhere(read_dat_file("z4fe.dat") == particle.z))
         f_1 = sum_over_pitch[idx, :]
         energies = read_dat_file("E4fe.dat")
@@ -90,7 +90,7 @@ def interpolate_data(particle: examples.RealDataParticle) -> np.ndarray:
             norm = 18
         sum_over_pitch = (
             np.einsum("ijk->ik", data) / norm
-        )  # removes j-dimansion through dot-product
+        )  # removes j-dimension through dot-product
         idx = int(np.argwhere(read_dat_file("z4fe.dat") == particle.z))
         f_1 = sum_over_pitch[idx, :]
         energies = read_dat_file("E4fe.dat")

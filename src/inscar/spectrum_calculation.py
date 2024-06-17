@@ -120,13 +120,14 @@ class SpectrumCalculation:
         return self.params.linear_frequency, spectrum
 
     def set_calculate_f_function(
-        self, f_func: Callable[[config.Particle, integrand_functions.Integrand], float]
+        self,
+        f_func: Callable[[config.Particle, integrand_functions.Integrand], np.ndarray],
     ) -> None:
         """Set what function to use to calculate the :math:`F` function.
 
         Parameters
         ----------
-        f_func : Callable[[Particle, Integrand], float]
+        f_func : Callable[[Particle, Integrand], np.ndarray]
             A function that take a particle and an integrand function as input, and that
             calculates the :math:`F` function based on these, returning a numpy array.
             By default, the ``integrate`` function from the ``numba_integration`` module
@@ -136,7 +137,7 @@ class SpectrumCalculation:
         --------
         inscar.numba_integration.integrate
         """
-        self._calculate_f = f_func
+        self._calculate_f = f_func  # type: ignore
 
     def _calculate_f_function(
         self, particle: config.Particle, int_func: integrand_functions.Integrand
@@ -165,7 +166,7 @@ class SpectrumCalculation:
             calculates the susceptibility function based on these, returning a single
             float.
         """
-        self._susceptibility = func
+        self._susceptibility = func  # type: ignore
 
     def _susceptibility_function(
         self, particle: config.Particle, int_func: integrand_functions.Integrand

@@ -50,6 +50,23 @@ rye = { dev-dependencies = [
     "sphinx-autobuild>=2021.3.14",
 ] }
 
+[tool.mypy]
+files = ["src"]
+ignore_missing_imports = true
+allow_redefinition = false
+check_untyped_defs = true
+ignore_errors = false
+implicit_reexport = false
+local_partial_types = true
+no_implicit_optional = true
+strict_equality = true
+strict_optional = true
+warn_no_return = true
+warn_redundant_casts = true
+warn_unreachable = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
 exclude = [
