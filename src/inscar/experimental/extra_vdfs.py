@@ -1,11 +1,10 @@
 """Extra, experimental velocity distribution functions."""
 
+import inscar as isr
 import numpy as np
 import scipy.constants as const
 import scipy.integrate as si
 import scipy.special as sps
-
-import inscar as isr
 
 
 class VdfKappa2(isr.Vdf):

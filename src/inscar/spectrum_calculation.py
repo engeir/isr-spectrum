@@ -1,6 +1,6 @@
 """Calculate the power density spectrum and other plasma parameters."""
 
-from typing import Callable, Optional, Tuple
+from typing import Callable, Optional
 
 import numpy as np
 import scipy.constants as const
@@ -70,7 +70,7 @@ class SpectrumCalculation:
         """
         self.electron_integration_function = function
 
-    def calculate_spectrum(self) -> Tuple[np.ndarray, np.ndarray]:
+    def calculate_spectrum(self) -> tuple[np.ndarray, np.ndarray]:
         """Calculate a spectrum based on the given parameters and calculation methods.
 
         Returns

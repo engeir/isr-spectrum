@@ -3,13 +3,12 @@
 from typing import Union
 
 import attr
+import inscar as isr
 import matplotlib.pyplot as plt
 import numpy as np
 import read
 import scipy.constants as const
 import scipy.integrate as si
-
-import inscar as isr
 
 
 @attr.s

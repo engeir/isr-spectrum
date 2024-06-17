@@ -1,6 +1,6 @@
 """Objects used to configure the physical parameters of the system."""
 
-from typing import Tuple, Union
+from typing import Union
 
 import attr
 import numpy as np
@@ -181,7 +181,7 @@ class Parameters:
         validator=is_positive,
         on_setattr=attr.setters.validate,
     )
-    frequency_range: Tuple = attr.ib(
+    frequency_range: tuple = attr.ib(
         default=(-2e6, 2e6),
         validator=is_range_tuple,
         on_setattr=attr.setters.validate,

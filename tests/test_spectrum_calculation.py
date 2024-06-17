@@ -1,9 +1,8 @@
 """Test cases for the spectrum calculation module."""
 
+import inscar as isr
 import pytest
 import scipy.constants as const
-
-import inscar as isr
 
 
 def test_missing_objects() -> None:

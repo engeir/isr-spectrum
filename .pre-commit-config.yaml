@@ -1,51 +1,44 @@
 # See https://pre-commit.com/ for usage and config
 repos:
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v2.3.0
-  hooks:
-
-  - id: check-yaml
-  - id: end-of-file-fixer
-  - id: trailing-whitespace
-  - id: check-added-large-files
-
-- repo: local
-  hooks:
-
-  - id: ruff_format
-    name: ruff_format
-    stages: [commit]
-    language: system
-    entry: ruff format src tests assets
-    types: [python]
-
-  - id: ruff
-    name: ruff
-    stages: [commit]
-    language: system
-    entry: ruff check src tests assets
-    types: [python]
-    args: [ --fix, --exit-non-zero-on-fix ]
-
-  - id: mypy
-    name: mypy
-    stages: [commit]
-    language: system
-    entry: mypy
-    types: [python]
-    require_serial: true
-
-  - id: pydocstringformatter
-    name: pydocstringformatter
-    stages: [commit]
-    language: system
-    entry: pydocstringformatter src tests assets
-    types: [python]
-
-  - id: pytest
-    name: pytest
-    stages: [commit]
-    language: system
-    entry: pytest tests
-    types: [python]
-    pass_filenames: false
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-added-large-files
+  - repo: local
+    hooks:
+      - id: rye_fmt
+        name: Rye format
+        stages: [commit]
+        language: system
+        entry: rye fmt src tests assets
+        types: [python]
+      - id: rye_lint
+        name: Rye lint
+        stages: [commit]
+        language: system
+        entry: rye lint src tests assets
+        types: [python]
+        args: [--fix]
+      - id: mypy
+        name: mypy
+        stages: [commit]
+        language: system
+        entry: rye run mypy .
+        types: [python]
+        require_serial: true
+      - id: pydocstringformatter
+        name: pydocstringformatter
+        stages: [commit]
+        language: system
+        entry: rye run pydocstringformatter src tests assets
+        types: [python]
+      - id: pytest
+        name: pytest
+        stages: [commit]
+        language: system
+        entry: rye run pytest tests
+        types: [python]
+        pass_filenames: false

@@ -9,7 +9,7 @@ from nox import Session, session
 
 package = "inscar"
 owner, repository = "engeir", "inscar"
-python_versions = ["3.8", "3.9", "3.10", "3.11", "3.12"]
+python_versions = ["3.9", "3.10", "3.11", "3.12"]
 nox.options.default_venv_backend = "uv"
 nox.options.sessions = (
     "pre-commit",
@@ -178,7 +178,7 @@ def xdoctest(session: Session) -> None:
     session.run("python", "-m", "xdoctest", package, *args)
 
 
-@session(name="docs-build", python="3.8")
+@session(name="docs-build", python="3.9")
 def docs_build(session: Session) -> None:
     """Build the documentation.
 
