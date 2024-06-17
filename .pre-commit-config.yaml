@@ -26,7 +26,7 @@ repos:
         name: mypy
         stages: [commit]
         language: system
-        entry: mypy src tests
+        entry: mypy
         types: [python]
         require_serial: true
       - id: pydocstringformatter
