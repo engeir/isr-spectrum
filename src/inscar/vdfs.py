@@ -78,11 +78,11 @@ class VdfKappa(Vdf):
 
     Notes
     -----
-    Kappa VDF used in Gordeyev paper by Mace [1]_.
+    Kappa VDF used in Gordeyev paper by Mace [5]_.
 
     References
     ----------
-    .. [1] R. L. Mace, "A Gordeyev integral for electrostatic waves in a magnetized
+    .. [5] R. L. Mace, "A Gordeyev integral for electrostatic waves in a magnetized
        plasma with a kappa velocity distribution," Physics of plasmas, vol. 10, no. 6,
        pp. 2101-2193, 2003.
     """

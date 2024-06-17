@@ -93,7 +93,7 @@ def integrate(
 
     Notes
     -----
-    The :math:`F` function here refers to the equation found in Hagfors [1]_:
+    The :math:`F` function here refers to the equation found in Hagfors [6]_:
 
     .. math::
 
@@ -107,7 +107,7 @@ def integrate(
 
     References
     ----------
-    .. [1] T. Hagfors, "Density Fluctuations in a Plasma in a Magnetic Field, with
+    .. [6] T. Hagfors, "Density Fluctuations in a Plasma in a Magnetic Field, with
         Applications to the Ionosphere," Journal of Geophysical Research, vol. 66,
         no. 9, pp. 1699-1712, 1961.
     """
@@ -179,11 +179,11 @@ def p(y, k_r, theta, w_c):
 
     Notes
     -----
-    Implementation of the :math:`p` function from Mace [1]_.
+    Implementation of the :math:`p` function from Mace [7]_.
 
     References
     ----------
-    .. [1] R. L. Mace, "A Gordeyev integral for electrostatic waves in a magnetized
+    .. [7] R. L. Mace, "A Gordeyev integral for electrostatic waves in a magnetized
        plasma with a kappa velocity distribution," Physics of plasmas, vol. 10, no. 6,
        pp. 2101-2193, 2003.
     """
