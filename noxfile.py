@@ -1,7 +1,6 @@
 """Nox sessions."""
 
 import shutil
-import sys
 from pathlib import Path
 from textwrap import dedent
 
@@ -114,8 +113,7 @@ def mypy(session: Session) -> None:
     session.install("mypy", "pytest")
     session.install("types-attrs")
     session.run("mypy", *args)
-    if not session.posargs:
-        session.run("mypy", f"--python-executable={sys.executable}", "noxfile.py")
+    session.run("mypy", "noxfile.py")
 
 
 @session(python=python_versions)

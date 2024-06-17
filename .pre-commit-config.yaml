@@ -23,7 +23,7 @@ repos:
     name: ruff
     stages: [commit]
     language: system
-    entry: ruff src tests assets
+    entry: ruff check src tests assets
     types: [python]
     args: [ --fix, --exit-non-zero-on-fix ]
 
