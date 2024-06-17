@@ -13,13 +13,13 @@ repos:
         name: Rye format
         stages: [commit]
         language: system
-        entry: rye fmt src tests assets
+        entry: rye fmt
         types: [python]
       - id: rye_lint
         name: Rye lint
         stages: [commit]
         language: system
-        entry: rye lint src tests assets
+        entry: rye lint
         types: [python]
         args: [--fix]
       - id: mypy
@@ -33,7 +33,7 @@ repos:
         name: pydocstringformatter
         stages: [commit]
         language: system
-        entry: pydocstringformatter src tests assets
+        entry: pydocstringformatter
         types: [python]
       - id: pytest
         name: pytest
