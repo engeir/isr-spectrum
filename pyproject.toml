@@ -51,7 +51,7 @@ rye = { dev-dependencies = [
 ] }
 
 [tool.mypy]
-files = ["src"]
+files = ["src", "tests", "assets"]
 ignore_missing_imports = true
 allow_redefinition = false
 check_untyped_defs = true
