@@ -157,7 +157,7 @@ tomli==2.0.1
     # via pytest
 tornado==6.4
     # via livereload
-tqdm==4.66.2
+tqdm==4.66.3
 types-attrs==19.1.0
 typing-extensions==4.11.0
     # via mypy
