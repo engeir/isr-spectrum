@@ -6,11 +6,12 @@
 #   features: []
 #   all-features: false
 #   with-sources: false
+#   generate-hashes: false
 
 -e file:.
 attrs==23.2.0
     # via inscar
-importlib-metadata==7.0.1
+importlib-metadata==7.1.0
     # via numba
 llvmlite==0.41.1
     # via numba
@@ -22,5 +23,5 @@ numpy==1.24.4
     # via scipy
 scipy==1.10.1
     # via inscar
-zipp==3.17.0
+zipp==3.18.1
     # via importlib-metadata
