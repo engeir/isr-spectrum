@@ -3,7 +3,6 @@
 import timeit
 
 import numpy as np
-
 from inscar import numba_integration as nb_int
 
 
@@ -17,21 +16,21 @@ def _trapz() -> None:
     print("Medium both")
     axis = np.linspace(0, 20, int(4e5))
     values = np.linspace(0, 1, int(4e5))
-    t1 = timeit.timeit(lambda: np.trapz(values, axis), number=1000)
+    t1 = timeit.timeit(lambda: np.trapezoid(values, axis), number=1000)  # type: ignore
     t2 = timeit.timeit(lambda: nb_int.trapz(values, axis), number=1000)
     _print_time(t1, t2)
 
     print("Single large array")
     axis = np.linspace(0, 20, int(4e7))
     values = np.linspace(0, 1, int(4e7))
-    t1 = timeit.timeit(lambda: np.trapz(values, axis), number=10)
+    t1 = timeit.timeit(lambda: np.trapezoid(values, axis), number=10)  # type: ignore
     t2 = timeit.timeit(lambda: nb_int.trapz(values, axis), number=10)
     _print_time(t1, t2)
 
     print("Many calls to func")
     axis = np.linspace(0, 20, int(4e1))
     values = np.linspace(0, 1, int(4e1))
-    t1 = timeit.timeit(lambda: np.trapz(values, axis), number=100000)
+    t1 = timeit.timeit(lambda: np.trapezoid(values, axis), number=100000)  # type: ignore
     t2 = timeit.timeit(lambda: nb_int.trapz(values, axis), number=100000)
     _print_time(t1, t2)
     print("")
@@ -40,7 +39,7 @@ def _trapz() -> None:
 def _np_inner_int(w: np.ndarray, x: np.ndarray, function: np.ndarray) -> np.ndarray:
     array = np.zeros_like(w, dtype=np.complex128)
     for idx in range(len(w)):
-        array[idx] = np.trapz(np.exp(-1j * w[idx] * x) * function, x)
+        array[idx] = np.trapezoid(np.exp(-1j * w[idx] * x) * function, x)  # type: ignore
     return array
 
 

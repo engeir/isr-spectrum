@@ -151,7 +151,7 @@ to run the full test suite. You will need Rye_ and nox_ installed for this.
 .. _munin.uit.no: https://hdl.handle.net/10037/19542
 .. _nox: https://nox.thea.codes/en/stable/
 .. _pip: https://pip.pypa.io/
-.. _rye: https://rye-up.com
+.. _rye: https://rye.astral.sh/
 .. _pre-commit: https://pre-commit.com/
 .. github-only
 .. _Contributor Guide: CONTRIBUTING.rst

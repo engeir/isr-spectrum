@@ -3,13 +3,12 @@
 from typing import Union
 
 import attr
+import inscar as isr
 import matplotlib.pyplot as plt
 import numpy as np
 import read
 import scipy.constants as const
 import scipy.integrate as si
-
-import inscar as isr
 
 
 @attr.s
@@ -17,7 +16,7 @@ class RealDataParticle(isr.Particle):
     """Create a particle object for the data sets."""
 
     mat_file: str = attr.ib(default="fe_zmuE-07.mat")
-    pitch_angle: Union[int, str] = attr.ib(default="all")
+    pitch_angle: Union[int, str, list] = attr.ib(default="all")
     z: int = attr.ib(default=300)
 
 

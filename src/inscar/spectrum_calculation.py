@@ -1,6 +1,6 @@
 """Calculate the power density spectrum and other plasma parameters."""
 
-from typing import Callable, Optional, Tuple
+from typing import Callable, Optional
 
 import numpy as np
 import scipy.constants as const
@@ -13,13 +13,8 @@ class SpectrumCalculation:
 
     def __init__(self):
         """Create the basic spectrum calculation object with empty attributes."""
-        self.ion: config.Particle
-        self.electron: config.Particle
-        self.ion_integration_function: integrand_functions.Integrand
-        self.electron_integration_function: integrand_functions.Integrand
-        self._calulate_f = self._calulate_f_function
+        self._calculate_f = self._calculate_f_function
         self._susceptibility = self._susceptibility_function
-        self.params: config.Parameters
 
     def set_params(self, params: config.Parameters) -> None:
         """Set the plasma parameters.
@@ -75,7 +70,7 @@ class SpectrumCalculation:
         """
         self.electron_integration_function = function
 
-    def calculate_spectrum(self) -> Tuple[np.ndarray, np.ndarray]:
+    def calculate_spectrum(self) -> tuple[np.ndarray, np.ndarray]:
         """Calculate a spectrum based on the given parameters and calculation methods.
 
         Returns
@@ -105,8 +100,8 @@ class SpectrumCalculation:
                 + "Use set_electron_integration_function()."
             )
 
-        fi = self._calulate_f(self.ion, self.ion_integration_function)
-        fe = self._calulate_f(self.electron, self.electron_integration_function)
+        fi = self._calculate_f(self.ion, self.ion_integration_function)
+        fe = self._calculate_f(self.electron, self.electron_integration_function)
 
         xp_i = self._susceptibility(self.ion, self.ion_integration_function)
         xp_e = self._susceptibility(self.electron, self.electron_integration_function)
@@ -125,13 +120,14 @@ class SpectrumCalculation:
         return self.params.linear_frequency, spectrum
 
     def set_calculate_f_function(
-        self, f_func: Callable[[config.Particle, integrand_functions.Integrand], float]
+        self,
+        f_func: Callable[[config.Particle, integrand_functions.Integrand], np.ndarray],
     ) -> None:
         """Set what function to use to calculate the :math:`F` function.
 
         Parameters
         ----------
-        f_func : Callable[[Particle, Integrand], float]
+        f_func : Callable[[Particle, Integrand], np.ndarray]
             A function that take a particle and an integrand function as input, and that
             calculates the :math:`F` function based on these, returning a numpy array.
             By default, the ``integrate`` function from the ``numba_integration`` module
@@ -141,9 +137,9 @@ class SpectrumCalculation:
         --------
         inscar.numba_integration.integrate
         """
-        self._calulate_f = f_func
+        self._calculate_f = f_func  # type: ignore
 
-    def _calulate_f_function(
+    def _calculate_f_function(
         self, particle: config.Particle, int_func: integrand_functions.Integrand
     ) -> np.ndarray:
         int_func.initialize(self.params, particle)
@@ -170,7 +166,7 @@ class SpectrumCalculation:
             calculates the susceptibility function based on these, returning a single
             float.
         """
-        self._susceptibility = func
+        self._susceptibility = func  # type: ignore
 
     def _susceptibility_function(
         self, particle: config.Particle, int_func: integrand_functions.Integrand

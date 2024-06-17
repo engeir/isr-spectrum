@@ -118,14 +118,14 @@ class IntMaxwell(Integrand):
     Notes
     -----
     This implementation is for the integral for the Maxwellian distribution from e.g.
-    Hagfors [1]_ or Mace [2]_.
+    Hagfors [2]_ or Mace [3]_.
 
     References
     ----------
-    .. [1] T. Hagfors, "Density Fluctuations in a Plasma in a Magnetic Field, with
+    .. [2] T. Hagfors, "Density Fluctuations in a Plasma in a Magnetic Field, with
        Applications to the Ionosphere," Journal of Geophysical Research, vol. 66, no.
        9, pp. 1699-1712, 1961.
-    .. [2] R. L. Mace, "A Gordeyev integral for electrostatic waves in a magnetized
+    .. [3] R. L. Mace, "A Gordeyev integral for electrostatic waves in a magnetized
        plasma with a kappa velocity distribution," Physics of plasmas, vol. 10, no. 6,
        pp. 2101-2193, 2003.
     """
@@ -178,11 +178,11 @@ class IntLong(Integrand):
     Notes
     -----
     This implementation is for the integral for the isotropic distribution from Mace
-    [1]_.
+    [4]_.
 
     References
     ----------
-    .. [1] R. L. Mace, "A Gordeyev integral for electrostatic waves in a magnetized
+    .. [4] R. L. Mace, "A Gordeyev integral for electrostatic waves in a magnetized
        plasma with a kappa velocity distribution," Physics of plasmas, vol. 10, no. 6,
        pp. 2101-2193, 2003.
     """

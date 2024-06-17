@@ -62,7 +62,7 @@ or the command-line interface:
    $ rye run python
    $ rye run inscar
 
-.. _Rye: https://rye-up.com/
+.. _Rye: https://rye.astral.sh/
 .. _Nox: https://nox.thea.codes/
 
 
