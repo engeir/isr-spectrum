@@ -26,19 +26,19 @@ repos:
         name: mypy
         stages: [commit]
         language: system
-        entry: rye run mypy .
+        entry: mypy .
         types: [python]
         require_serial: true
       - id: pydocstringformatter
         name: pydocstringformatter
         stages: [commit]
         language: system
-        entry: rye run pydocstringformatter src tests assets
+        entry: pydocstringformatter src tests assets
         types: [python]
       - id: pytest
         name: pytest
         stages: [commit]
         language: system
-        entry: rye run pytest tests
+        entry: pytest tests
         types: [python]
         pass_filenames: false
