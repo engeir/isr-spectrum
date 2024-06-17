@@ -155,7 +155,7 @@ tomli==2.0.1
     # via pre-commit-hooks
     # via pydocstringformatter
     # via pytest
-tornado==6.4
+tornado==6.4.1
     # via livereload
 tqdm==4.66.2
 types-attrs==19.1.0
