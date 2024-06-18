@@ -110,7 +110,7 @@ pytz==2024.1
     # via babel
 pyyaml==6.0.1
     # via pre-commit
-requests==2.32.2
+requests==2.32.3
     # via sphinx
 ruamel-yaml==0.18.6
     # via pre-commit-hooks
