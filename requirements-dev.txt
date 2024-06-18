@@ -90,7 +90,7 @@ packaging==24.0
     # via sphinx
 pillow==10.3.0
     # via matplotlib
-platformdirs==4.2.0
+platformdirs==4.2.2
     # via virtualenv
 pluggy==1.4.0
     # via pytest
