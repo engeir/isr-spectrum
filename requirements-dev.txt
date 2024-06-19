@@ -77,7 +77,7 @@ nodeenv==1.8.0
     # via pre-commit
 numba==0.58.1
     # via inscar
-numpy==1.24.4
+numpy==2.0.0
     # via contourpy
     # via inscar
     # via lmfit
