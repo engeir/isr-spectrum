@@ -84,7 +84,7 @@ numpy==2.0.0
     # via matplotlib
     # via numba
     # via scipy
-packaging==24.0
+packaging==24.1
     # via matplotlib
     # via pytest
     # via sphinx
