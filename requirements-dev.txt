@@ -159,7 +159,7 @@ tornado==6.4.1
     # via livereload
 tqdm==4.66.3
 types-attrs==19.1.0
-typing-extensions==4.11.0
+typing-extensions==4.12.2
     # via mypy
 uncertainties==3.2.1
     # via lmfit
