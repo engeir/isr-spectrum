@@ -45,7 +45,7 @@ fonttools==4.51.0
     # via matplotlib
 future==1.0.0
     # via uncertainties
-identify==2.5.35
+identify==2.5.36
     # via pre-commit
 idna==3.7
     # via requests
