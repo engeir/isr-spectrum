@@ -97,13 +97,13 @@ def integrate(
 
     .. math::
 
-       \\begin{aligned}
-       F_{\\mathrm{e}}(\\boldsymbol{k}, \\omega)
-       =1-\\left(i\\frac{X(\\omega)}{X_{\\mathrm{e}}}+\\Lambda_{\\mathrm{e}}\\right)\\int_0^\\infty\\exp\\left
-       \\{-iy\\frac{X(\\omega)}{X_{\\mathrm{e}}}-y\\Lambda_{\\mathrm{e}}\\right.\\\
-       \\left.-\\frac{1}{2X_{\\mathrm{e}}^2}\\left[\\sin^2\\theta(1-\\cos
-       y)+\\frac{1}{2}y^2\\cos^2\\theta\\right]\\right \\}\\textnormal{d}y
-       \\end{aligned}
+       \begin{aligned}
+       F_{\mathrm{e}}(\boldsymbol{k}, \omega)
+       =1-\left(i\frac{X(\omega)}{X_{\mathrm{e}}}+\Lambda_{\mathrm{e}}\right)\int_0^{\infty}\exp\left
+       \{-iy\frac{X(\omega)}{X_{\mathrm{e}}}-y\Lambda_{\mathrm{e}}\right.\\
+       \left.-\frac{1}{2X_{\mathrm{e}}^2}\left[\sin^2\theta(1-\cos
+       y)+\frac{1}{2}y^2\cos^2\theta\right]\right \}\textnormal{d}y
+       \end{aligned}
 
     References
     ----------
