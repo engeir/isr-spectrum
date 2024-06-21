@@ -94,7 +94,7 @@ platformdirs==4.2.2
     # via virtualenv
 pluggy==1.4.0
     # via pytest
-pre-commit==3.5.0
+pre-commit==3.7.1
 pre-commit-hooks==4.6.0
 pydocstringformatter==0.7.3
 pygments==2.17.2
