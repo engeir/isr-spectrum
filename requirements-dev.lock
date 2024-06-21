@@ -9,7 +9,7 @@
 #   generate-hashes: false
 
 -e file:.
-alabaster==0.7.13
+alabaster==0.7.16
     # via sphinx
 asteval==0.9.33
     # via lmfit
@@ -122,13 +122,13 @@ six==1.16.0
     # via python-dateutil
 snowballstemmer==2.2.0
     # via sphinx
-sphinx==6.2.1
+sphinx==7.3.7
     # via sphinx-autobuild
     # via sphinx-autodoc-typehints
     # via sphinx-rtd-theme
     # via sphinxcontrib-jquery
 sphinx-autobuild==2021.3.14
-sphinx-autodoc-typehints==1.23.0
+sphinx-autodoc-typehints==2.2.0
 sphinx-rtd-theme==2.0.0
 sphinxcontrib-applehelp==1.0.4
     # via sphinx
@@ -142,7 +142,7 @@ sphinxcontrib-jsmath==1.0.1
     # via sphinx
 sphinxcontrib-qthelp==1.0.3
     # via sphinx
-sphinxcontrib-serializinghtml==1.1.5
+sphinxcontrib-serializinghtml==1.1.10
     # via sphinx
 tomli==2.0.1
     # via coverage
@@ -150,6 +150,7 @@ tomli==2.0.1
     # via pre-commit-hooks
     # via pydocstringformatter
     # via pytest
+    # via sphinx
 tornado==6.4.1
     # via livereload
 tqdm==4.66.4
